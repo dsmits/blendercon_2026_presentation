@@ -30,6 +30,43 @@ $eScienceBlue: #009DDD;
     }
   }
 
+  // "image-below" slide: title at the top, one image filling the rest of the window.
+  // The slide content is made exactly one window tall, so reveal's vertical
+  // centering puts it at the top. Sizes come from the window, divided by reveal's
+  // scale, because the slide box itself is only 960x700.
+  .reveal-viewport.image-below {
+    --win-w: calc(100vw / var(--slide-scale, 1));
+    --win-h: calc(100vh / var(--slide-scale, 1));
+    --title-h: calc(var(--win-h) * 0.14);
+
+    #logo-color { left: 3vw; opacity: 1; }
+
+    section {
+      h2 {
+        height: var(--title-h);
+        margin: 0;
+        display: flex;
+        align-items: center;
+        text-align: left;
+        padding-left: 10%;
+      }
+      .below-img {
+        position: relative;  // centered on the window, not the 960px slide
+        left: 50%;
+        transform: translateX(-50%);
+        display: block;
+        width: var(--win-w);
+        max-width: none;
+        height: calc(var(--win-h) - var(--title-h));
+        max-height: none;
+        margin: 0;
+        object-fit: contain;
+        border: none;
+        box-shadow: none;
+      }
+    }
+  }
+
   video.video {
     display: block;
     margin: 0 0 10px 10%;

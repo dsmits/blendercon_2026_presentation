@@ -48,7 +48,7 @@ Open source software for:
 
 <!-- .slide: data-state="two-pane" -->
 
-## Spoiler: yes, blender is worth it
+## Spoiler Alert: Blender is worth learning!
 
 There are a lot of excited scientific Blender users out there!
 
@@ -63,29 +63,13 @@ There are a lot of excited scientific Blender users out there!
 1. Data storytelling with cinematic quality
 2. Blender as a simulation hub
 3. Add-ons that borrow Blender's 3D tools
-4. Making it accurate
+4. Making data representation accurate
 
 ===
 
 <!-- .slide: data-state="title" -->
 
 # 1. Data storytelling with cinematic quality
-
----
-
-<!-- .slide: data-state="two-pane" -->
-
-## Stellar evolution
-
-- TULIPS-3D: MESA computes the physics
-- Science data is converted to textures
-- Scrub through a star's interior over time
-- Mass transfer in binary systems, made visible
-
-<img class="pane-img" src="./images/PXL_20260924_081642114.jpg">
-
-Note:
-Eva Laplace and Ben de Vries (SURF / UvA / KU Leuven). Stellar evolution is usually shown as tracks on a Hertzsprung-Russell diagram: accurate but abstract. TULIPS-3D is a Blender add-on, successor to the 2D TULIPS visualisation, still under construction and open source. Their claim: the first visualisation where you can intuitively see mass transfer happen in binary star systems.
 
 ---
 
@@ -167,19 +151,65 @@ Brady Johnston, who created Molecular Nodes, presented nodebpy in "Build Your No
 
 ---
 
+<!-- .slide: data-state="image-below" -->
+
+## Blender brings together simulations
+
+<img class="below-img" src="./images/pasted_20261013112321.png">
+
+
+---
+
 <!-- .slide: data-state="two-pane" -->
 
-## Procedural simulation environments
+## Procedural simulation environments ([link](https://conference.blender.org/2026/presentations/4184/))
+- Sionna RT is an open-source library for simulating radio propagation
+- Jupyter notebook can be used to simulate
+- Jupyter is not sufficient for more complex scenes
 
-- Procedural scene: Geometry Nodes and parameters
-- External solver: Sionna RT (EM propagation)
-- Python API drives the solver and reads results back
-- Visualize and render in Blender
+<img class="pane-img" src="./images/jupyter-notebook-sim.png">
 
-<img class="pane-img" src="./images/pasted_20261013112321.png">
+Note: "Building Procedural Simulation Environments" by Felipe Oliveira Ribas. Ray-tracing simulations are getting 
+faster, but the 3D environments are still often static, simplified and prepared by hand for one scenario. Blender becomes a procedural scene-generation layer: Geometry Nodes and Python create controlled scene variations, expose geometric assumptions, and generate different levels of detail for different computational budgets. EM propagation is one example (procedural greenhouses, plants at any growth stage, heatmap shown in the 3D scene). Main point: Blender can connect different simulations into one tool. (The Sionna RT description is background knowledge, not from the talk: check it.)
+
+---
+
+<!-- .slide: data-state="image-below" -->
+
+## Easy generation and variation of scenes
+
+<img class="below-img" src="./images/blender-slide-tree.gif">
+
+
+---
+
+<!-- .slide: data-state="image-below" -->
+
+## Application: Tracking EM waves through Greenhouses
+
+<img class="below-img" src="./images/greenhouse.png">
+
+---
+
+<!-- .slide: data-state="two-pane" -->
+
+## Stellar evolution
+
+- TULIPS-3D: MESA computes the physics
+- Science data is converted to textures
+- Scrub through a star's interior over time
+- Mass transfer in binary systems, made visible
+
+<img class="pane-img" src="./images/tulips3d.gif">
 
 Note:
-"Building Procedural Simulation Environments" by Felipe Oliveira Ribas. Ray-tracing simulations are getting faster, but the 3D environments are still often static, simplified and prepared by hand for one scenario. Blender becomes a procedural scene-generation layer: Geometry Nodes and Python create controlled scene variations, expose geometric assumptions, and generate different levels of detail for different computational budgets. EM propagation is one example (procedural greenhouses, plants at any growth stage, heatmap shown in the 3D scene). Main point: Blender can connect different simulations into one tool. (The Sionna RT description is background knowledge, not from the talk: check it.)
+Eva Laplace and Ben de Vries (SURF / UvA / KU Leuven). Stellar evolution is usually shown as tracks on a Hertzsprung-Russell diagram: accurate but abstract. TULIPS-3D is a Blender add-on, successor to the 2D TULIPS visualisation, still under construction and open source. Their claim: the first visualisation where you can intuitively see mass transfer happen in binary star systems.
+
+---
+
+<!-- .slide: data-state="two-pane" -->
+
+
 
 ---
 
