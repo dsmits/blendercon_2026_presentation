@@ -1,0 +1,51 @@
+// Presentation-specific styling on top of the eScience Center theme.
+
+$eScienceBlue: #009DDD;
+
+.reveal {
+  // theme link color (yellow) is unreadable on white
+  a { color: darken($eScienceBlue, 10%); }
+
+  // image in the blue pane of a "two-pane" slide. The pane covers the right half
+  // of the window, but the img sits inside the scaled slide box, so size it from
+  // the window and divide out reveal's scale.
+  .pane-img {
+    --pane-w: calc(50vw / var(--slide-scale, 1));
+    --pane-h: calc(100vh / var(--slide-scale, 1));
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: var(--pane-w);
+    max-height: var(--pane-h);
+    margin: 0;
+    transform: translateY(-50%);
+    object-fit: contain;
+    border: none;
+    box-shadow: none;
+
+    // crop a wide photo to 4:3 so it fills more of the pane
+    &.fill {
+      height: min(var(--pane-h), calc(var(--pane-w) * 0.75));
+      object-fit: cover;
+    }
+  }
+
+  video.video {
+    display: block;
+    margin: 0 0 10px 10%;
+    max-height: 48vh;
+  }
+
+  // links slide: two columns
+  .talks ul {
+    display: block;
+    column-count: 2;
+    column-gap: 40px;
+    font-size: 0.7em;
+    padding-left: 10%;
+    padding-right: 4%;
+    li { break-inside: avoid; margin-bottom: 14px; }
+  }
+
+  .slides section ol { text-align: left; padding-left: 10%; }
+}

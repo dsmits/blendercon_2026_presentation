@@ -1,0 +1,18 @@
+{
+  "name": "blendercon-2026",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && cp slides.md dist/",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "sass": "^1.55.0",
+    "vite": "^3.1.0"
+  },
+  "dependencies": {
+    "reveal.js": "^4.4.0"
+  }
+}
