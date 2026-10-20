@@ -193,7 +193,7 @@ faster, but the 3D environments are still often static, simplified and prepared 
 
 <!-- .slide: data-state="two-pane" -->
 
-## Stellar evolution
+## Stellar evolution([link](https://conference.blender.org/2026/presentations/4202/))
 
 - TULIPS-3D: MESA computes the physics
 - Science data is converted to textures
@@ -207,24 +207,28 @@ Eva Laplace and Ben de Vries (SURF / UvA / KU Leuven). Stellar evolution is usua
 
 ---
 
-<!-- .slide: data-state="two-pane" -->
+<!-- .slide: data-state="standard" -->
 
+## Animals in motion
 
+- [FARMS](https://doi.org/10.1101/2023.09.25.559130) is a simulation tool for neuromechanical modeling
+- Tight integration of muscle and neural models
+- animal/robot-agnostic
+
+Note:
+Shravan Tata Ramalingasetty (Janelia Research Campus). Example: a mouse walking over uneven terrain, driven by a model of its spinal circuitry. Open source as FARMS (Framework for Animal and Robot Modeling and Simulation), with a custom Blender add-on. UPBGE, a fork that keeps the Blender Game Engine alive, also came up for real-time simulation.
 
 ---
 
 <!-- .slide: data-state="two-pane" -->
 
-## Animals in motion
+## How do they use FARMS?
+1. Full CT scan of animal, e.g. a mouse 
+2. Organs and muscles segmented with AI
+3. Rigged in Blender, then simulated walking
 
-- Neuromechanical modelling: full CT/MRI scans of animals
-- Organs segmented, so muscles can be identified
-- Rigged in Blender, then simulated walking
+<img class="pane-img" src="./images/skeleton-clip.gif">
 
-<img class="pane-img" src="./images/pasted_20260930094946.png">
-
-Note:
-Shravan Tata Ramalingasetty (Janelia Research Campus). Example: a mouse walking over uneven terrain, driven by a model of its spinal circuitry. Open source as FARMS (Framework for Animal and Robot Modeling and Simulation), with a custom Blender add-on. UPBGE, a fork that keeps the Blender Game Engine alive, also came up for real-time simulation.
 
 ===
 
