@@ -30,11 +30,59 @@ $eScienceBlue: #009DDD;
     }
   }
 
+  // animated glTF model in the blue pane of a "two-pane" slide, sized like .pane-img
+  .pane-model {
+    --pane-w: calc(50vw / var(--slide-scale, 1));
+    --pane-h: calc(100vh / var(--slide-scale, 1));
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: var(--pane-w);
+    height: var(--pane-h);
+    margin: 0;
+    transform: translateY(-50%);
+    background: transparent;
+    --poster-color: transparent;
+  }
+
+  // reveal centers a section on its own content height, which for a heading-only slide is not
+  // the middle of the window. Pin it to the full slide height so the model is centered on the window.
+  .slides section:has(.pane-model) {
+    top: 0 !important;
+    height: var(--slide-height, 700px);
+
+    h2 { margin-top: calc(var(--slide-height, 700px) / 2 - 0.7em); }
+  }
+
+  // two images side by side in the blue pane, at the same height
+  .pane-imgs {
+    --pane-w: calc(50vw / var(--slide-scale, 1));
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: var(--pane-w);
+    box-sizing: border-box;
+    padding: 0 3%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3%;
+
+    img {
+      width: 48.5%;
+      height: auto;
+      margin: 0;
+      border: none;
+      box-shadow: none;
+    }
+  }
+
   // "image-below" slide: title at the top, one image filling the rest of the window.
   // The slide content is made exactly one window tall, so reveal's vertical
   // centering puts it at the top. Sizes come from the window, divided by reveal's
   // scale, because the slide box itself is only 960x700.
-  .reveal-viewport.image-below {
+  @at-root .reveal-viewport.image-below & {
     --win-w: calc(100vw / var(--slide-scale, 1));
     --win-h: calc(100vh / var(--slide-scale, 1));
     --title-h: calc(var(--win-h) * 0.14);
@@ -49,6 +97,8 @@ $eScienceBlue: #009DDD;
         align-items: center;
         text-align: left;
         padding-left: 10%;
+        font-size: calc(var(--title-h) * 0.45);
+        line-height: 1.1;
       }
       .below-img {
         position: relative;  // centered on the window, not the 960px slide
@@ -64,12 +114,46 @@ $eScienceBlue: #009DDD;
         border: none;
         box-shadow: none;
       }
+      // two images side by side, same height, filling the space below the title
+      .below-imgs {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3%;
+        width: var(--win-w);
+        height: calc(var(--win-h) - var(--title-h));
+        padding: 0 3% 4%;
+        box-sizing: border-box;
+
+        img {
+          flex: 0 1 auto;
+          min-width: 0;
+          max-width: 48%;
+          max-height: 100%;
+          margin: 0;
+          object-fit: contain;
+          border: none;
+          box-shadow: none;
+        }
+      }
     }
+  }
+
+  // speaker credit under the title of the first slide about a talk
+  .credit {
+    margin: -0.5em 0 1em;
+    font-size: 0.55em;
+    line-height: 1.3;
+    color: #55606a;
   }
 
   video.video {
     display: block;
-    margin: 0 0 10px 10%;
+    margin: 0 auto 10px;
+    max-width: 80%;
     max-height: 48vh;
   }
 
@@ -84,5 +168,34 @@ $eScienceBlue: #009DDD;
     li { break-inside: avoid; margin-bottom: 14px; }
   }
 
-  .slides section ol { text-align: left; padding-left: 10%; }
+  // the theme's two-pane rule only covers h1-h3, p and ul, so do the same for numbered lists
+  .slides section ol { display: block; text-align: left; padding-left: 10%; }
+  @at-root .reveal-viewport.two-pane & .slides section ol { padding-left: 4%; padding-right: 54%; }
+}
+
+.reveal .mermaid {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+
+  svg { max-width: 90%; max-height: 55vh; height: auto; }
+
+  // round the corners of nodes and subgraph boxes
+  .node rect, .cluster rect { rx: 10px; ry: 10px; }
+}
+
+// in a "two-pane" slide the diagram fills the blue pane, sized like .pane-img
+.reveal .reveal-viewport.two-pane .mermaid,
+.reveal-viewport.two-pane .reveal .mermaid {
+  --pane-w: calc(50vw / var(--slide-scale, 1));
+  --pane-h: calc(100vh / var(--slide-scale, 1));
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: var(--pane-w);
+  margin: 0;
+  transform: translateY(-50%);
+  align-items: center;
+
+  svg { max-width: 92% !important; max-height: calc(var(--pane-h) * 0.8); }
 }
