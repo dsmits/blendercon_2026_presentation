@@ -23,6 +23,8 @@ Open source software for:
 - Scripting in Python
 - Thriving community of plugin developers
 
+<img class="corner-logo" src="./images/blender-logo.svg" alt="Blender logo">
+
 ---
 
 <!-- .slide: data-state="standard" -->
@@ -81,6 +83,8 @@ There are a lot of excited scientific Blender users out there! ([Sciviz Meetup](
 
 <p class="credit">José Marín · CoMMLab (Universitat de València) / SciBlend</p>
 
+<div class="affil-logos"><img src="./images/logos/valencia.svg" alt=""></div>
+
 - Plenty of tools for graph analysis, but not for graph animation
 - Animation as a craft is missing: curves, ease, camera, light
 - SciGraphs: graph analysis + filmmaking, built on Geometry Nodes
@@ -106,6 +110,8 @@ Render demo of SciGraphs. In this case, main point of addon is art.
 ## Collaborating in .blend files ([link](https://conference.blender.org/2026/presentations/4200/))
 
 <p class="credit">Neele Dijkstra, Torben Hanegraaf, Jop van Roosmalen et al. · Rijkswaterstaat</p>
+
+<div class="affil-logos"><img src="./images/logos/rijkswaterstaat.svg" alt=""></div>
 
 - Rijkswaterstaat made a film about the Dutch rivers
 - Contributions from many teams: tides, wind, an accurate GIS map, camera work
@@ -175,9 +181,10 @@ Note: Next talk provides a solution to this verbosity problem.
 
 <!-- .slide: data-state="standard" -->
 
-## Node trees as code: nodebpy ([link](https://conference.blender.org/2026/presentations/4257/))
+## nodebpy: Node trees as code:  ([link](https://conference.blender.org/2026/presentations/4257/))
 
 <p class="credit">Brady Johnston · Molecular Nodes</p>
+
 
 - Increasingly more assets are becoming node trees
 - Increased interest in code-first workflows because of AI agents
@@ -217,6 +224,8 @@ Brady Johnston, who created Molecular Nodes
 
 <p class="credit">Felipe Oliveira Ribas · Ghent University</p>
 
+<div class="affil-logos"><img src="./images/logos/ghent.svg" alt=""></div>
+
 - Sionna RT is an open-source library for simulating radio propagation
 - Jupyter notebook can be used to simulate
 - Jupyter is not sufficient for more complex scenes
@@ -250,6 +259,8 @@ faster, but the 3D environments are still often static, simplified and prepared 
 ## Stellar evolution([link](https://conference.blender.org/2026/presentations/4202/))
 
 <p class="credit">Ben de Vries · SURF</p>
+
+<div class="affil-logos"><img src="./images/logos/surf.svg" alt=""></div>
 
 - TULIPS-3D: MESA computes the physics
 - Science data is converted to textures
@@ -346,6 +357,8 @@ Note:
 
 <p class="credit">SciExplorer: Alisa Ovsiannikova, Maastricht University / ETH Zürich<br>Cella: Sampo Muranen, Umeå Plant Science Centre</p>
 
+<div class="affil-logos"><img src="./images/logos/maastricht.svg" alt=""><img src="./images/logos/eth.svg" alt=""></div>
+
 - Links objects from microscopy data to their measurements
 - Filter and inspect structures in 3D
 - Also: [Cella](https://conference.blender.org/2026/presentations/4127/), for plant single-cell transcriptomics
@@ -433,6 +446,7 @@ The image is her good-versus-bad comparison of color management: same data, same
 
 ## Why Blender for science?
 
+- Mature 3d software with a lot of features
 - Customisability: Python API and add-ons
 - Reproducibility: scenes generated from code, versioned in Git
 - Cinematic quality: cameras, light, materials, animation curves

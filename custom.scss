@@ -142,6 +142,50 @@ $eScienceBlue: #009DDD;
     }
   }
 
+  // logo in the top-right corner of a "standard" slide
+  .corner-logo {
+    position: absolute;
+    right: 4%;
+    top: 6%;
+    width: 18%;
+    margin: 0;
+    border: none;
+    box-shadow: none;
+    background: none;
+  }
+
+  // affiliation logos of the speaker, top-right of the slide. On a "two-pane" slide
+  // they sit on a white badge at the top of the blue pane, above the image.
+  .affil-logos {
+    position: absolute;
+    right: 4%;
+    top: -3em; // above the (vertically centred) content, so long titles can't collide
+    height: 2.4em;
+    display: flex;
+    align-items: center;
+    gap: 1.2em;
+    img {
+      flex: none;
+      height: 100%;
+      width: auto;
+      margin: 0;
+      border: none;
+      box-shadow: none;
+      background: none;
+    }
+  }
+  section[data-state="two-pane"] .affil-logos {
+    right: 12%;
+    top: -1em;
+    z-index: 2;
+    height: 1.25em;
+    gap: 0.9em;
+    padding: 0.3em 0.7em;
+    background: #fff;
+    border-radius: 0.3em;
+    box-sizing: content-box;
+  }
+
   // speaker credit under the title of the first slide about a talk
   .credit {
     margin: -0.5em 0 1em;
