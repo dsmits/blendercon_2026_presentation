@@ -11,7 +11,7 @@ Djura Smits | 20 October 2026
 
 ===
 
-<!-- .slide: data-state="standard" -->
+<!-- .slide: data-state="two-pane" -->
 
 ## Blender
 
@@ -24,10 +24,12 @@ Open source software for:
 - Thriving community of plugin developers
 
 <img class="corner-logo" src="./images/blender-logo.svg" alt="Blender logo">
+<img class="pane-img" width="100%" src="./images/suzanne.png" alt="3d modeling software with a monkey head model, called Suzanne, in the viewport">
+
 
 ---
 
-<!-- .slide: data-state="standard" -->
+<!-- .slide: data-state="two-pane" -->
 
 ## Blendercon
 
@@ -36,11 +38,21 @@ Open source software for:
 - 700+ attendees
 - 126 speakers
 
+<img class="pane-img" src="./images/bcon26_banner.png" alt="Blendercon 2026 banner with a stylized donut and the text 'Blendercon 2026'">
+<div class="img-credit">Image: Blender Foundation, Blendercon 2026</div>
+
+---
+
+### Blendercon topics
+
+<img class="standard" src="./images/bcon_wordcloud.png" alt="Word cloud of Blendercon 2026 talks, with words like 'animation', 'vfx', 'pipeline'">
+<div class="img-credit">https://www.blender.org/events/blender-conference-2026-recap/</div>
+
 ---
 
 <!-- .slide: data-state="standard" -->
 
-## My question
+## My questions
 
 - What kind of scientific applications does Blender have?
 - What are the pros (and cons) of using Blender for scientific visualization?
@@ -64,10 +76,9 @@ There are a lot of excited scientific Blender users out there! ([Sciviz Meetup](
 
 ## Ways Blender is used for science
 
-1. Data storytelling with cinematic quality
-2. Blender as a simulation hub
-3. Add-ons that borrow Blender's 3D tools
-4. Making data representation accurate
+- 🎥 Data storytelling with cinematic quality
+- 🌐 Blender as a simulation hub 
+- 🧩 Mature 3d modeling and navigation tool that scientists can build on
 
 ===
 
@@ -115,7 +126,7 @@ Render demo of SciGraphs. In this case, main point of addon is art.
 
 - Rijkswaterstaat made a film about the Dutch rivers
 - Contributions from many teams: tides, wind, an accurate GIS map, camera work
-- Everyone working directly in one .blend file got chaotic
+- Everyone working directly in one (binary) .blend file got chaotic
 
 Note:
 Rijkswaterstaat (Neele Dijkstra, Torben Hanegraaf, Jop van Roosmalen, with Casper Vissers and Blooming Data). A sea-tide animation, a 2D wind animation, an accurate GIS map and the camera work all came from different people. Having that many collaborators work directly in Blender quickly became chaotic.
@@ -131,24 +142,7 @@ Rijkswaterstaat (Neele Dijkstra, Torben Hanegraaf, Jop van Roosmalen, with Caspe
 - The .blend file is never saved
 - Data and scripts live together in Git
 
-```mermaid
-flowchart LR
-    cli[command line]
-
-    subgraph git
-        direction TB
-        data[data] --> py[Python scripts]
-    end
-
-    blender[Blender]
-
-    cli --> git
-    git --> blender
-
-    classDef box fill:#0b3a6b,stroke:#0b3a6b,color:#fff
-    class cli,data,py,blender box
-    style git fill:#eeeeee,stroke:#dddddd,color:#333
-```
+<img class="pane-img" src="./images/git-workflow.svg" alt="The command line runs a Git repository holding data and Python scripts, which drives Blender">
 
 ---
 
@@ -159,7 +153,7 @@ flowchart LR
 <video class="video" src="https://www.rovid.nl/ienw/rws/2026/ienw-rws-20260729-id1s1rkmwu-web.mp4" controls muted preload="metadata"></video>
 
 
-[rijkswaterstaat.nl/water/waterbeheer](https://www.rijkswaterstaat.nl/water/waterbeheer)
+<div class="img-credit"> <a href="https://www.rijkswaterstaat.nl/water/waterbeheer">https://www.rijkswaterstaat.nl/water/waterbeheer</a></div>
 
 Note:
 Play the film here. The video was made entirely with this code-and-Git workflow.
@@ -174,6 +168,7 @@ Play the film here. The video was made entirely with this code-and-Git workflow.
   <img src="./images/rijkswaterstaat_node_tree.png">
   <img src="./images/rijkswaterstaat_code.png">
 </div>
+<div class="img-credit">Slides: Neele Dijkstra, Torben Hanegraaf, Jop van Roosmalen (Rijkswaterstaat), “Co-Creating 3D Data Animations With Code”, Blendercon 2026</div>
 
 Note: Next talk provides a solution to this verbosity problem.
 
@@ -231,6 +226,7 @@ Brady Johnston, who created Molecular Nodes
 - Jupyter is not sufficient for more complex scenes
 
 <img class="pane-img" src="./images/jupyter-notebook-sim.png">
+<div class="img-credit">Slide: Felipe Oliveira Ribas (Gent University), “Building Procedural Simulation Environments”, Blendercon 2026</div>
 
 Note: "Building Procedural Simulation Environments" by Felipe Oliveira Ribas. Ray-tracing simulations are getting 
 faster, but the 3D environments are still often static, simplified and prepared by hand for one scenario. Blender becomes a procedural scene-generation layer: Geometry Nodes and Python create controlled scene variations, expose geometric assumptions, and generate different levels of detail for different computational budgets. EM propagation is one example (procedural greenhouses, plants at any growth stage, heatmap shown in the 3D scene). Main point: Blender can connect different simulations into one tool. (The Sionna RT description is background knowledge, not from the talk: check it.)
@@ -242,6 +238,7 @@ faster, but the 3D environments are still often static, simplified and prepared 
 ## Easy generation and variation of scenes
 
 <img class="below-img" src="./images/blender-slide-tree.gif">
+<div class="img-credit">Slide: Felipe Oliveira Ribas (Gent University), “Building Procedural Simulation Environments”, Blendercon 2026</div>
 
 
 ---
@@ -251,6 +248,7 @@ faster, but the 3D environments are still often static, simplified and prepared 
 ## Application: Tracking EM waves through Greenhouses
 
 <img class="below-img" src="./images/greenhouse.png">
+<div class="img-credit">Slide: Felipe Oliveira Ribas (Gent University), “Building Procedural Simulation Environments”, Blendercon 2026</div>
 
 ---
 
@@ -268,6 +266,7 @@ faster, but the 3D environments are still often static, simplified and prepared 
 - Mass transfer in binary systems, made visible
 
 <img class="pane-img" src="./images/tulips3d.gif">
+<div class="img-credit">Slide: Ben de Vries (SURF), “From Stardust to Black Holes: Visualising the Physics of Stellar Evolution in Blender”, Blendercon 2026</div>
 
 Note:
 Eva Laplace and Ben de Vries (SURF / UvA / KU Leuven). Stellar evolution is usually shown as tracks on a Hertzsprung-Russell diagram: accurate but abstract. TULIPS-3D is a Blender add-on, successor to the 2D TULIPS visualisation, still under construction and open source. Their claim: the first visualisation where you can intuitively see mass transfer happen in binary star systems.
@@ -285,7 +284,7 @@ Eva Laplace and Ben de Vries (SURF / UvA / KU Leuven). Stellar evolution is usua
 - animal/robot-agnostic
 
 Note:
-Shravan Tata Ramalingasetty (Janelia Research Campus). Example: a mouse walking over uneven terrain, driven by a model of its spinal circuitry. Open source as FARMS (Framework for Animal and Robot Modeling and Simulation), with a custom Blender add-on. UPBGE, a fork that keeps the Blender Game Engine alive, also came up for real-time simulation.
+Shravan Tata Ramalingasetty (Janelia Research Campus). Example: a mouse walking over uneven terrain, driven by a model of its spinal circuitry. Open source as FARMS (Framework for Animal and Robot Modeling and Simulation), with a custom Blender add-on.
 
 ---
 
@@ -297,6 +296,7 @@ Shravan Tata Ramalingasetty (Janelia Research Campus). Example: a mouse walking 
 3. Rigged in Blender, then simulated walking
 
 <img class="pane-img" src="./images/skeleton-clip.gif">
+<div class="img-credit">Slide: Shravan Tata Ramalingasetty (Janelia Research Campus), “Neuromechanical Modeling and Simulation of Animals and Robots”, Blendercon 2026</div>
 
 Note: The red bars indicate pressure strength. This data feeds back into the neural model, which in turn drives the 
 muscles.
@@ -308,6 +308,7 @@ muscles.
 ## Sensory feedback closes the loop
 
 <img class="below-img" src="./images/farms-sensorimotor.jpg">
+<div class="img-credit">Slide: Shravan Tata Ramalingasetty (Janelia Research Campus), “Neuromechanical Modeling and Simulation of Animals and Robots”, Blendercon 2026</div>
 
 Note:
 Still from the talk (Shravan Tata Ramalingasetty, BCON26). Left: the spinal circuitry model. Middle: the mouse walking over uneven terrain, with ground contact and pressure sensed at the feet. Right: the sensory feedback circuit and the hindlimb muscles. Contact feedback goes into the neural model, which drives the muscles.
@@ -345,6 +346,7 @@ A recurring pattern: scientists build their own add-on so Blender understands th
 - BlendSplat: import splats, edit with Geometry Nodes
 
 <img class="pane-img" src="./images/gaussian-splat-dog.jpg">
+<div class="img-credit">Slide: Sören Schmidt-Clausen, “Procedural Workflows with Gaussian Splatting”, Blendercon 2026</div>
 
 Note:
 "Procedural Workflows with Gaussian Splatting". Gaussian splatting (3DGS) reconstructs photoreal 3D scenes from photos. A lab, a field site or an artefact can be placed in the same scene as the scientific data. The talk itself is mostly about artistic uses (clouds, relighting, rigging), but the points carry over to science. Main point: Blender brings together multiple data types in one scene (splats, meshes, volumes, measurement data), and its modeling and navigation tools are built in. Dedicated splatting tools are annoying to navigate and clean up. Image: still from the talk (Sören Schmidt-Clausen, BCON26), a splat in the Blender viewport with Geometry Nodes.
@@ -355,18 +357,37 @@ Note:
 
 ## SciExplorer: microscopy data ([link](https://conference.blender.org/2026/presentations/4215/))
 
-<p class="credit">SciExplorer: Alisa Ovsiannikova, Maastricht University / ETH Zürich<br>Cella: Sampo Muranen, Umeå Plant Science Centre</p>
+<p class="credit">Alisa Ovsiannikova · Maastricht University / ETH Zürich</p>
 
 <div class="affil-logos"><img src="./images/logos/maastricht.svg" alt=""><img src="./images/logos/eth.svg" alt=""></div>
 
 - Links objects from microscopy data to their measurements
 - Filter and inspect structures in 3D
-- Also: [Cella](https://conference.blender.org/2026/presentations/4127/), for plant single-cell transcriptomics
 
 <img class="pane-img" src="./images/pasted_20260930094214.png">
+<div class="img-credit">Slide: Alisa Ovsiannikova (Maastricht University), “SciExplorer: From Microscopy Data to Interactive Scientific Visualisation”, Blendercon 2026</div>
 
 Note:
-Researchers can filter and inspect structures in 3D. Cella paper: onlinelibrary.wiley.com/doi/full/10.1111/ppl.14068.
+Researchers can filter and inspect structures in 3D.
+
+---
+
+<!-- .slide: data-state="two-pane" -->
+
+## Cella: plant single-cell data ([link](https://conference.blender.org/2026/presentations/4127/))
+
+<p class="credit">Sampo Muranen · Umeå Plant Science Centre</p>
+
+- Single-cell RNA sequencing produces huge datasets
+- Cella turns them into 3D heatmaps on a plant model
+- Search a gene ID and render it
+- Built for plant developmental biology
+
+<img class="pane-img" src="./images/cella.png">
+<div class="img-credit">Slide: Sampo Muranen (Umeå Plant Science Centre), “Cella: 3D Data Visualization for Plant Single-Cell Transcriptomics”, Blendercon 2026</div>
+
+Note:
+Cella is a cell atlas visualization tool built with Blender (Cella 2.0 in the picture, with the gene ID input panel in the top right). Cella paper: onlinelibrary.wiley.com/doi/full/10.1111/ppl.14068.
 
 ---
 
@@ -379,8 +400,10 @@ Researchers can filter and inspect structures in 3D. Cella paper: onlinelibrary.
 - Attorneys want Blender's output, not its interface
 - Solution: plugins that simplify Blender for them
 
+Somewhat related: [an old blendercon talk about forensic architecture](https://youtu.be/RWPdSJ1-Dvs?si=YKn6C8yjDEZx_5kq)
+
 Note:
-I talked to Holly, who does crime scene reconstruction. It is hard for attorneys to interact with Blender, but they do want what it provides. She built plugins to simplify the interface. Related ideas from the Sciviz meetup: application templates, export to glTF or Sketchfab, straight to the browser.
+I talked to someone who does crime scene reconstruction. It is hard for attorneys to interact with Blender, but they do want what it provides. She built plugins to simplify the interface. Related ideas from the Sciviz meetup: application templates, export to glTF or Sketchfab, straight to the browser.
 
 ===
 
@@ -401,6 +424,7 @@ I talked to Holly, who does crime scene reconstruction. It is hard for attorneys
 - The data travels with the surface, packed into the mesh UVs
 
 <img class="pane-img" src="./images/pasted_20260930094531.png">
+<div class="img-credit">Slide: Nicole Feng, “Scientific Data on Surfaces”, Blendercon 2026</div>
 
 Note:
 Her specialty is geometric computing (meshes, curves, point clouds), so the computation happens in her own tools. She then exports the mesh with the values packed into the UVs, and looks them up in a colormap image such as viridis in shader nodes (UV, Separate XYZ, image texture, BSDF). The image shows the workflow: experiment in Polyscope (her geometry processing viewer), export the mesh, pack the scalar data in the texture coordinates. She uses Blender a lot to render geometry for papers. nzfeng.github.io.
@@ -415,6 +439,7 @@ Her specialty is geometric computing (meshes, curves, point clouds), so the comp
   <img src="./images/feng-research-results.jpg">
   <img src="./images/feng-cows.jpg">
 </div>
+<div class="img-credit">Slides: Nicole Feng, “Scientific Data on Surfaces”, Blendercon 2026</div>
 
 Note:
 Stills from Nicole Feng's talk (BCON26). Left: a wall of results from her research papers. Right: one of her fun illustrations, cows on a torus showing a fence that bounds a region versus one that does not. She uses Blender extensively to render geometry for her papers.
@@ -430,6 +455,7 @@ Stills from Nicole Feng's talk (BCON26). Left: a wall of results from her resear
 - The talk is full of tips to keep rendered values accurate
 
 <img class="pane-img" src="./images/pasted_20260930094656.png">
+<div class="img-credit">Slide: Nicole Feng, “Scientific Data on Surfaces”, Blendercon 2026</div>
 
 Note:
 The image is her good-versus-bad comparison of color management: same data, same colormap, but the bad one no longer matches the legend. The audience does not need the details, but the talk has many concrete tips: color management set to Standard instead of AgX or Filmic (tone-mapping view transforms change the colormap, so the rendered colors no longer match the legend), an emission shader so the color is the data and not the lighting, and Fresnel to highlight small details and silhouettes. Accuracy is not the default in Blender.

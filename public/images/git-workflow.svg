@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 520" role="img" aria-labelledby="t">
+  <title id="t">The command line runs a Git repository holding data and Python scripts, which drives Blender</title>
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="6" stdDeviation="7" flood-color="#06223f" flood-opacity="0.35"/>
+    </filter>
+    <linearGradient id="card" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#e8f3fb"/>
+    </linearGradient>
+    <linearGradient id="navy" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#14508f"/>
+      <stop offset="1" stop-color="#0b3a6b"/>
+    </linearGradient>
+    <linearGradient id="orange" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffb114"/>
+      <stop offset="1" stop-color="#f5792a"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 12 12" refX="9" refY="6" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M1 1 L11 6 L1 11 L3.5 6 Z" fill="#ffffff"/>
+    </marker>
+  </defs>
+
+  <g font-family="'Nunito', 'Assistant', 'Helvetica Neue', Arial, sans-serif" font-weight="700" text-anchor="middle">
+
+    <!-- Git repository -->
+    <rect x="300" y="30" width="400" height="460" rx="30" fill="#ffffff" fill-opacity="0.16"
+          stroke="#ffffff" stroke-opacity="0.85" stroke-width="3" stroke-dasharray="3 12" stroke-linecap="round"/>
+    <g transform="translate(500 76)">
+      <g fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round">
+        <path d="M-62 -14 V14 M-62 14 C-62 0 -40 4 -40 -8"/>
+      </g>
+      <g fill="#ffffff">
+        <circle cx="-62" cy="-18" r="7"/>
+        <circle cx="-62" cy="18" r="7"/>
+        <circle cx="-40" cy="-12" r="7"/>
+      </g>
+      <text x="22" y="12" font-size="38" fill="#ffffff">Git</text>
+    </g>
+
+    <!-- data -->
+    <g filter="url(#shadow)">
+      <rect x="340" y="130" width="320" height="105" rx="22" fill="url(#navy)"/>
+    </g>
+    <g transform="translate(392 182)" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+      <ellipse cx="0" cy="-14" rx="18" ry="7"/>
+      <path d="M-18 -14 V14 C-18 20 18 20 18 14 V-14"/>
+      <path d="M-18 0 C-18 6 18 6 18 0"/>
+    </g>
+    <text x="535" y="196" font-size="36" fill="#ffffff">data</text>
+
+    <!-- arrow data -> scripts -->
+    <path d="M500 241 V303" stroke="#ffffff" stroke-width="5" stroke-linecap="round" marker-end="url(#arrow)"/>
+
+    <!-- Python scripts -->
+    <g filter="url(#shadow)">
+      <rect x="340" y="310" width="320" height="105" rx="22" fill="url(#navy)"/>
+    </g>
+    <g transform="translate(392 362)" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M-8 -16 L-24 0 L-8 16"/>
+      <path d="M8 -16 L24 0 L8 16"/>
+    </g>
+    <text x="545" y="375" font-size="30" fill="#ffffff">Python scripts</text>
+
+    <!-- command line -->
+    <g filter="url(#shadow)">
+      <rect x="20" y="195" width="210" height="130" rx="24" fill="url(#card)"/>
+    </g>
+    <text x="125" y="246" font-size="32" fill="#0b3a6b" font-family="'DejaVu Sans Mono', 'Courier New', monospace">&gt;_</text>
+    <text x="125" y="293" font-size="27" fill="#0b3a6b">command line</text>
+
+    <!-- Blender -->
+    <g filter="url(#shadow)">
+      <rect x="780" y="195" width="200" height="130" rx="24" fill="url(#orange)"/>
+    </g>
+    <text x="880" y="273" font-size="40" fill="#ffffff">Blender</text>
+
+    <!-- arrows between the three stages -->
+    <path d="M238 260 H284" stroke="#ffffff" stroke-width="5" stroke-linecap="round" marker-end="url(#arrow)"/>
+    <path d="M714 260 H760" stroke="#ffffff" stroke-width="5" stroke-linecap="round" marker-end="url(#arrow)"/>
+  </g>
+</svg>

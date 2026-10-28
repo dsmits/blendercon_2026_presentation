@@ -391,7 +391,7 @@ $heading4Size: 1.5em;
 	  @include left-e;
 	  h1, h2 {
 		color: white;
-		margin: 6vh 6vw 6vh 15vw;
+		margin: 40px 58px 40px 190px; // px, not vw: the slide box is scaled as a whole
 	  }
 	}
 	// Classes for toggling multiple elements at once; default styles
