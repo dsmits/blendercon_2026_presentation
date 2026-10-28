@@ -4,6 +4,7 @@ import { defineConfig } from 'vite'
 // know about it. Reload the page when it changes (dev server only).
 const reloadOnSlidesChange = {
   name: 'reload-on-slides-change',
+  apply: 'serve',
   configureServer(server) {
     server.watcher.add('slides.md')
     server.watcher.on('change', (file) => {
@@ -13,5 +14,6 @@ const reloadOnSlidesChange = {
 }
 
 export default defineConfig({
+  base: './',
   plugins: [reloadOnSlidesChange],
 })
