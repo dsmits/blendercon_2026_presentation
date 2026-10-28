@@ -481,10 +481,10 @@ The image is her good-versus-bad comparison of color management: same data, same
 
 ---
 
-<!-- .slide: data-state="standard" -->
+<!-- .slide: data-state="two-pane" -->
 
 
-## Talks
+### Thank you!
 
 <div class="talks">
 
@@ -502,13 +502,8 @@ The image is her good-versus-bad comparison of color management: same data, same
 
 </div>
 
----
-
-<!-- .slide: data-state="two-pane" -->
-
-## Thank you!
-
 <model-viewer class="pane-model" src="./files/escience_donut.glb" alt="Animated eScience donut" autoplay camera-controls auto-rotate camera-orbit="0deg 75deg 190%" interaction-prompt="none" shadow-intensity="0" data-prevent-swipe></model-viewer>
 
-Note:
-Animated GLB exported from Blender. Drag to rotate it.
+---
+
+

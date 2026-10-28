@@ -89,8 +89,9 @@ $eScienceBlue: #009DDD;
   .slides section:has(.pane-model) {
     top: 0 !important;
     height: var(--slide-height, 700px);
-
-    h2 { margin-top: calc(var(--slide-height, 700px) / 2 - 0.7em); }
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
   }
 
   // two images side by side in the blue pane, at the same height
@@ -249,15 +250,15 @@ $eScienceBlue: #009DDD;
     max-height: 48vh;
   }
 
-  // links slide: two columns
+  // links list on a "two-pane" slide: one column in the white half
   .talks ul {
     display: block;
-    column-count: 2;
-    column-gap: 40px;
-    font-size: 0.7em;
-    padding-left: 10%;
-    padding-right: 4%;
-    li { break-inside: avoid; margin-bottom: 14px; }
+    font-size: 0.55em;
+    line-height: 1.2;
+    margin: 0;
+    padding-left: 1em;
+    padding-right: 52%;
+    li { margin-bottom: 6px; }
   }
 
   // the theme's two-pane rule only covers h1-h3, p and ul, so do the same for numbered lists
